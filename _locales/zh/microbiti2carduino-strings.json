@@ -1,0 +1,11 @@
+{
+    "microbiti2cesp32|block": "i2c控制esp32",
+    "microbiti2cesp32.setpinmode|block": "用i2c設定esp32數位腳位 %pin|為 %XY",
+    "microbiti2cesp32.setdigital|block": "用i2c設定esp32數位腳位 %pin|的值為 %XY",
+    "microbiti2cesp32.setpinmode1|block": "用i2c設定esp32數位腳位 %pin|為 %XY",
+    "microbiti2cesp32.setdigital1|block": "用i2c設定esp32數位腳位 %pin|的值為 %XY",
+    "microbiti2cesp32.setdigital2|block": "用i2c設定esp32數位腳位 %pin|的PWM輸出值為 %XY",
+    "microbiti2cesp32.setdigital3|block": "用i2c讀取esp32數位腳位 %pin 的值",
+    "microbiti2cesp32.setdigital4|block": "用i2c讀取esp32類比腳位 %pin 的值",
+    "microbiti2cesp32.sendifttt|block": "用i2c讓esp32傳送IFTTT key %key | 事件 %event | 值1 %value1 "
+}
