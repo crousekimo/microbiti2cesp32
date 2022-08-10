@@ -80,7 +80,13 @@ namespace microbiti2cesp32 {
     //% weight=97 
     export function setdigital4(pin: analogpin):number {
         return parseFloat(receivei2cmessage("analogRead="+pin.toString()))
-    }   			
+    }   
+	
+    //% blockId=sendmqtt block="send mqtt topic %topic | message %message "
+    //% weight=56 
+    export function sendmqtt(topic: string, message: string):number {
+        sendi2cmessage("sendmqtt="+topic+","+message)
+    }  
 			
     function sendi2cmessage(command: string):void {
         for (let index = 0; index <= command.length-1; index++) {
