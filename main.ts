@@ -73,13 +73,13 @@ namespace microbiti2cesp32 {
     //% blockId=setdigital3 block="read esp32 digital pin  %pin value"
     //% weight=98
     export function setdigital3(pin: digitalpin):number {
-        return parseInt(receivei2cmessage("digitalRead="+pin.toString()))
+        return parseFloat(receivei2cmessage("digitalRead="+pin.toString()))
     }
 
     //% blockId=setdigital4 block="read esp32 analog pin  %pin value"
     //% weight=97 
-    export function setdigital4(pin: analogpin):string {
-        return receivei2cmessage("analogRead="+pin.toString())
+    export function setdigital4(pin: analogpin):number {
+        return parseFloat(receivei2cmessage("analogRead="+pin.toString()))
     }   			
 			
     function sendi2cmessage(command: string):void {
