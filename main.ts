@@ -84,7 +84,7 @@ namespace microbiti2cesp32 {
 	
     //% blockId=sendmqtt block="send mqtt topic %topic | message %message "
     //% weight=56 
-    export function sendmqtt(topic: string, message: string):number {
+    export function sendmqtt(topic: string, message: string):void {
         sendi2cmessage("sendmqtt="+topic+","+message)
     }  
 			
