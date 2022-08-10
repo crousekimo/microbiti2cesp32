@@ -64,11 +64,23 @@ namespace microbiti2cesp32 {
     }
 	
     //% blockId=sendifttt block="send ifttt key %key | event %event | value1 %value1"
-    //% weight=98
+    //% weight=50
     export function sendifttt(key: string, event: string, value1: string):void {
         sendi2cmessage("ifttt="+key+","+event+","+value1)    
     }
 	
+    //% blockId=setdigital3 block="read esp32 digital pin  %pin value"
+    //% weight=98
+    export function setdigital3(pin: digitalpin):number {
+        return parseInt(receivei2cmessage("digitalRead="+pin.toString()))
+    }
+
+    //% blockId=setdigital4 block="read esp32 analog pin  %pin value"
+    //% weight=97 
+    export function setdigital4(pin: analogpin):number {
+        return parseInt(receivei2cmessage("analogRead="+pin.toString())
+    }   			
+			
     function sendi2cmessage(command: string):void {
         for (let index = 0; index <= command.length-1; index++) {
         	pins.i2cWriteNumber(
@@ -113,6 +125,6 @@ namespace microbiti2cesp32 {
             i2cmessage2 = i2cmessage2 + String.fromCharCode(messagecheck2)
 	}
     }
-    return parseInt(i2cmessage2)	    
+    return i2cmessage2	    
     }
 }
