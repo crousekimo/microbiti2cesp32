@@ -7,5 +7,6 @@
     "microbiti2cesp32.setdigital2|block": "用i2c設定esp32數位腳位 %pin|的PWM輸出值為 %XY",
     "microbiti2cesp32.setdigital3|block": "用i2c讀取esp32數位腳位 %pin 的值",
     "microbiti2cesp32.setdigital4|block": "用i2c讀取esp32類比腳位 %pin 的值",
-    "microbiti2cesp32.sendifttt|block": "用i2c讓esp32傳送IFTTT key %key | 事件 %event | 值1 %value1 "
+    "microbiti2cesp32.sendifttt|block": "用i2c讓esp32傳送IFTTT key %key | 事件 %event | 值1 %value1 ",
+    "microbiti2cesp32.sendmqtt|block": "發送MQTTT訊息 主題 %topic | 訊息 %message "
 }
