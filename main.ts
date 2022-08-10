@@ -87,6 +87,8 @@ namespace microbiti2cesp32 {
     } 
     
     function receivei2cmessage(command:string-1):number {
+    let i2cmessage2 = ""
+    let aa: number[] = []
     basic.forever(function () {
     for (let index2 = 0; index2 <= c.length; index2++) {
         pins.i2cWriteNumber(
@@ -102,137 +104,15 @@ namespace microbiti2cesp32 {
     NumberFormat.Int8LE,
     false
     )
-    aa = [
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1
-    ]
-    let i2cmessage2 = ""
+    i2cmessage2=""
     for (let index = 0; index <= 118; index++) {
         let dd = pins.i2cReadBuffer(8,952,false)
-aa[index] = dd.getNumber(NumberFormat.Int8LE, index)
-        if (aa[index] == -1) {
+        let messagecheck2 = dd.getNumber(NumberFormat.Int8LE, index)
+        if (messagecheck2 == -1) {
             break;
-        }
-        i2cmessage2 = "" + i2cmessage2 + String.fromCharCode(aa[index])
+        }else 
+        i2cmessage2 = "" + i2cmessage2 + String.fromCharCode(messagecheck2)
     }
-    return Number(i2cmessage2)         
+    return parseInt(i2cmessage2)
+    }    
 }
