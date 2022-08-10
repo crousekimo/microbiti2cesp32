@@ -89,7 +89,6 @@ namespace microbiti2cesp32 {
     function receivei2cmessage(command: string):number {
     let i2cmessage2 = ""
     let aa: number[] = []
-    basic.forever(function () {
     for (let index2 = 0; index2 <= command.length-1; index2++) {
         pins.i2cWriteNumber(
         8,
@@ -104,5 +103,16 @@ namespace microbiti2cesp32 {
     NumberFormat.Int8LE,
     false
     )
+    i2cmessage2=""
+    for (let index = 0; index <= 118; index++) {
+        let dd = pins.i2cReadBuffer(8,952,false)
+        let messagecheck2 = dd.getNumber(NumberFormat.Int8LE, index)
+        if (messagecheck2 == -1) {
+            break;
+        }else {
+            i2cmessage2 = i2cmessage2 + String.fromCharCode(messagecheck2)
+	}
+    }
+    return parseInt(i2cmessage2)	    
     }
 }
