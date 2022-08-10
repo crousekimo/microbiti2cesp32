@@ -86,14 +86,14 @@ namespace microbiti2cesp32 {
 	)
     } 
     
-    function receivei2cmessage(command:string-1):number {
+    function receivei2cmessage(command:string):number {
     let i2cmessage2 = ""
     let aa: number[] = []
     basic.forever(function () {
-    for (let index2 = 0; index2 <= c.length; index2++) {
+    for (let index2 = 0; index2 <= command.length-1; index2++) {
         pins.i2cWriteNumber(
         8,
-        c.charCodeAt(index2),
+        command.charCodeAt(index2),
         NumberFormat.Int8LE,
         false
         )
@@ -110,8 +110,9 @@ namespace microbiti2cesp32 {
         let messagecheck2 = dd.getNumber(NumberFormat.Int8LE, index)
         if (messagecheck2 == -1) {
             break;
-        }else 
-        i2cmessage2 = "" + i2cmessage2 + String.fromCharCode(messagecheck2)
+        }else {
+            i2cmessage2 = i2cmessage2 + String.fromCharCode(messagecheck2)
+	}
     }
     return parseInt(i2cmessage2)
     }    
