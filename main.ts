@@ -99,7 +99,7 @@ namespace microbiti2cesp32 {
 	)
     } 
     
-    function receivei2cmessage(command: string):number {
+    function receivei2cmessage(command: string):string {
     let i2cmessage2 = ""
     let aa: number[] = []
     for (let index2 = 0; index2 <= command.length-1; index2++) {
