@@ -6,7 +6,8 @@ namespace microbiti2cesp32 {
         A2 = 2,
         A3 = 3,
         A4 = 4,
-        A5 = 5
+        A5 = 5,
+	A33= 33
      }
      
       export enum digitalpin {
