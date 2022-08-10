@@ -104,5 +104,5 @@ namespace microbiti2cesp32 {
     NumberFormat.Int8LE,
     false
     )
- 
+    }
 }
