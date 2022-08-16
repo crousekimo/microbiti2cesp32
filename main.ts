@@ -102,15 +102,15 @@ namespace microbiti2cesp32 {
         sendi2cmessage("ifttt="+key+","+event+","+value1)    
     }
 	
-    //% blockId=setdigital3 block="read esp32 digital pin  %pin value"
+    //% blockId=setdigitalR block="read esp32 digital pin  %pin value"
     //% weight=98
-    export function setdigital3(pin: digitalpin):number {
+    export function setdigitalR(pin: digitalRpin):number {
         return parseFloat(receivei2cmessage("digitalRead="+pin.toString()))
     }
 
-    //% blockId=setdigital4 block="read esp32 analog pin  %pin value"
+    //% blockId=setanalogR block="read esp32 analog pin  %pin value"
     //% weight=97 
-    export function setdigital4(pin: analogpin):number {
+    export function setanalogR(pin: analogRpin):number {
         return parseFloat(receivei2cmessage("analogRead="+pin.toString()))
     }   
 	
