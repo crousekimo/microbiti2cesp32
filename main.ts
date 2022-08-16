@@ -1,41 +1,73 @@
 //% weight=0 color=#EC7505 icon="\uf0ad" block="microbiti2cesp32"
 namespace microbiti2cesp32 {
-      export enum analogpin {
-        A0 = 0,
-        A1 = 1,
-        A2 = 2,
-        A3 = 3,
-        A4 = 4,
-        A5 = 5,
-	A33= 33
+      export enum analogRpin {
+        32 = 32,
+        33 = 33,
+        34 = 34,
+        35 = 35,
+        36 = 36,
+	39 = 39
      }
      
-      export enum digitalpin {
-        D0 = 0,
-        D1 = 1,
-        D2 = 2,
-        D3 = 3,
-        D4 = 4,
-        D5 = 5,
-        D6 = 6,
-        D7 = 7,
-        D8 = 8,
-        D9 = 9,
-        D10 = 10,
-        D11 = 11,
-        D12 = 12,
-        D13 = 13
+      export enum digitalWpin {
+        2 = 2,
+	4 = 4,
+        13 = 13,
+        16 = 16,
+        17 = 17,
+        18 = 18,
+        19 = 19,
+        21 = 21,
+        22 = 22,
+        23 = 23,
+        24 = 24,
+        25 = 25,
+        26 = 26,
+        27 = 27,
+        32 = 32,
+	33 = 33
      }
       
-      export enum digitalpin1 {
-        D3 = 3,
-        D5 = 5,
-        D6 = 6,
-        D9 = 9,
-        D10 = 10,
-        D11 = 11
+      export enum analogWpin {
+        2 = 2,
+	4 = 4,
+        13 = 13,
+        16 = 16,
+        17 = 17,
+        18 = 18,
+        19 = 19,
+        21 = 21,
+        22 = 22,
+        23 = 23,
+        24 = 24,
+        25 = 25,
+        26 = 26,
+        27 = 27,
+        32 = 32,
+	33 = 33
      }
-      
+
+	
+   export enum digitalRpin {
+        2 = 2,
+        13 = 13,
+        16 = 16,
+        17 = 17,
+        18 = 18,
+        19 = 19,
+        21 = 21,
+        22 = 22,
+        23 = 23,
+        24 = 24,
+        25 = 25,
+        26 = 26,
+        27 = 27,
+        32 = 32,
+	33 = 33,
+        36 = 36,
+	39 = 39
+     }	
+	
       export enum type {
         INPUT = 2,
         OUTPUT = 1
@@ -45,22 +77,22 @@ namespace microbiti2cesp32 {
         LOW = 0
      }
       
-    //% blockId=setpinmode1 block="set esp32 digital pin %pin | for %XY"
+    //% blockId=setpinmode block="set esp32 digital pin %pin | for %XY"
     //% weight=101
-    export function setpinmode1(pin: digitalpin, XY: type):void {
+    export function setpinmode(pin: digitalWpin, XY: type):void {
        sendi2cmessage("pinMode="+pin.toString()+","+XY.toString())    
     }
      
      
-    //% blockId=setdigital1 block="set esp32 digital pin  %pin | value to %XY"
+    //% blockId=setdigitalW block="set esp32 digital pin  %pin | value to %XY"
     //% weight=100
-    export function setdigital1(pin: digitalpin, XY: value):void {
+    export function setdigitalW(pin: digitalWpin, XY: value):void {
         sendi2cmessage("digitalWrite="+pin.toString()+","+XY.toString())    
     }
     
-    //% blockId=setdigital2 block="set esp32 digital pin  %pin | PWM value to %XY"
+    //% blockId=setanalogW block="set esp32 digital pin  %pin | PWM value to %XY"
     //% weight=99
-    export function setdigital2(pin: digitalpin1, XY: number):void {
+    export function setanalogW(pin: analogWpin, XY: number):void {
         sendi2cmessage("analogWrite="+pin.toString()+","+XY.toString())    
     }
 	
