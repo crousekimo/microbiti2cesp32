@@ -76,6 +76,8 @@ namespace microbiti2cesp32 {
         HIGH = 1,
         LOW = 0
      }
+     let mqttmessage="";
+     let mqtttopic="";
       
     //% blockId=setpinmode block="set esp32 digital pin %pin | for %XY"
     //% weight=101
@@ -114,6 +116,25 @@ namespace microbiti2cesp32 {
         return parseFloat(receivei2cmessage("analogRead="+pin.toString()))
     }   
 	
+    //% blockId=setanalogR block="receive mqtt"
+    //% weight=97 
+    export function ReceiveMqtt():void {
+        let a=receivei2cmessage("mqttrec=")
+	let strAry = a.split(',')
+	mqtttopic=strAry[0]
+        mqttmessage=strAry[1]
+    }   
+	
+    //% blockId=setanalogR block="receive mqtt topic"
+    //% weight=97 	
+    export function ReceiveMqttTopic():String {
+        return mqtttopic
+    }  
+    //% blockId=setanalogR block="receive mqtt message"
+    //% weight=97 	
+    export function ReceiveMqttMessage():String {
+        return message
+    }  
     //% blockId=sendmqtt block="send mqtt topic %topic | message %message "
     //% weight=56 
     export function sendmqtt(topic: string, message: string):void {
