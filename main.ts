@@ -150,7 +150,7 @@ namespace microbiti2cesp32 {
     //% blockId=ReceiveMqttMessage block="receive mqtt message"
     //% weight=97 	
     export function ReceiveMqttMessage():string {
-        return receivei2cmessage("mqttm=")
+        return receivei2cmessage("mqttrecm=")
     }  
     //% blockId=sendmqtt block="send mqtt topic %topic | message %message "
     //% weight=56 
