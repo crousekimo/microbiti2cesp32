@@ -129,7 +129,12 @@ namespace microbiti2cesp32 {
     //% weight=97 
     export function ReceiveMqtt1():string {
         let a = receivei2cmessage("mqttrec=")
+	if ( a.length > 1 )
+	{
 	sendi2cmessage("clearmqtt")
+		
+	}
+			
         return a
     } 
 	
