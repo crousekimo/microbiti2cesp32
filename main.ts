@@ -116,7 +116,7 @@ namespace microbiti2cesp32 {
         return parseFloat(receivei2cmessage("analogRead="+pin.toString()))
     }   
 	
-    //% blockId=setanalogR block="receive mqtt"
+    //% blockId=ReceiveMqtt block="receive mqtt"
     //% weight=97 
     export function ReceiveMqtt():void {
         let a=receivei2cmessage("mqttrec=")
@@ -125,12 +125,12 @@ namespace microbiti2cesp32 {
         mqttmessage=strAry[1]
     }   
 	
-    //% blockId=setanalogR block="receive mqtt topic"
+    //% blockId=ReceiveMqttTopic block="receive mqtt topic"
     //% weight=97 	
     export function ReceiveMqttTopic():String {
         return mqtttopic
     }  
-    //% blockId=setanalogR block="receive mqtt message"
+    //% blockId=ReceiveMqttMessage block="receive mqtt message"
     //% weight=97 	
     export function ReceiveMqttMessage():String {
         return mqttmessage
