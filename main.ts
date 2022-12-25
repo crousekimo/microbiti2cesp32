@@ -132,9 +132,8 @@ namespace microbiti2cesp32 {
 	if ( a.length > 1 )
 	{
 	sendi2cmessage("clearmqtt")
-		
-	}
-			
+	} else
+		a=""
         return a
     } 
 	
