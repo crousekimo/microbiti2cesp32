@@ -128,7 +128,7 @@ namespace microbiti2cesp32 {
     //% blockId=ReceiveMqtt1 block="receive mqtt1"
     //% weight=97 
     export function ReceiveMqtt1():string {
-        string a = receivei2cmessage("mqttrec=")
+        let a = receivei2cmessage("mqttrec=")
 	sendi2cmessage("clearmqtt")
         return a
     } 
