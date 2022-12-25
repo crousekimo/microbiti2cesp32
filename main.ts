@@ -133,7 +133,7 @@ namespace microbiti2cesp32 {
     //% blockId=setanalogR block="receive mqtt message"
     //% weight=97 	
     export function ReceiveMqttMessage():String {
-        return message
+        return mqttmessage
     }  
     //% blockId=sendmqtt block="send mqtt topic %topic | message %message "
     //% weight=56 
