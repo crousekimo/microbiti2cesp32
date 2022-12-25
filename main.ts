@@ -124,7 +124,12 @@ namespace microbiti2cesp32 {
 	mqtttopic=strAry[0]
         mqttmessage=strAry[1]
     }   
-	
+
+    //% blockId=ReceiveMqtt1 block="receive mqtt1"
+    //% weight=97 
+    export function ReceiveMqtt():string {
+        return a=receivei2cmessage("mqttrec=")
+    } 
 	
     //% blockId=subMqtt block="Subscribe mqtt %topic"
     //% weight=97 
