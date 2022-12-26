@@ -108,7 +108,7 @@ namespace microbiti2cesp32 {
     export function setanalogW(pin: analogWpin, XY: number):void {
         sendi2cmessage("analogWrite="+pin.toString()+","+XY.toString())    
     }
-	
+	//% group="5.IFTTT"  
     //% blockId=sendifttt block="send ifttt key %key | event %event | value1 %value1"
     //% weight=50
     export function sendifttt(key: string, event: string, value1: string):void {
