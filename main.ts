@@ -174,7 +174,7 @@ namespace microbiti2cesp32 {
 
     //% blockId=openweathermapreturn block="OpenWeatherMap option %option "
     //% weight=56 
-    export function openweathermapreturn(option: openweathermapmenu):number {
+    export function openweathermapreturn(option: openweathermapmenu):string {
         return receivei2cmessage("openweathermapreturn="+option.toString())
     } 
 	
