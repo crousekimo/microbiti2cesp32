@@ -147,6 +147,12 @@ namespace microbiti2cesp32 {
     export function linemessage(message: string):void {
         sendi2cmessage("linemessage="+message)
     }  
+	
+    //% blockId=linesticker block="Line notify sticker message %message | packageID %packageID | stickerID %stickerID "
+    //% weight=56 
+    export function linesticker(message: string,packageID: number, stickerID: number):void {
+        sendi2cmessage("linesticker="+message+","+packageID.toString()+","+stickerID.toString())
+    }  
 			
     function sendi2cmessage(command: string):void {
         for (let index = 0; index <= command.length-1; index++) {
