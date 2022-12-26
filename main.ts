@@ -69,12 +69,12 @@ namespace microbiti2cesp32 {
      }	
 
      export enum openweathermapmenu {
-        Lon = "lon",
-        Lat = "lat",
-        Temperature = "opentemperature",
-        Pressure = "openpressure",
-        Humidity = "openhumidity",
-	WindSpeed = "openwindspeed"
+        Lon = 1,
+        Lat = 2,
+        Temperature = 3,
+        Pressure = 4,
+        Humidity = 5,
+	WindSpeed = 6
      }
 	
 	
@@ -176,7 +176,7 @@ namespace microbiti2cesp32 {
     //% weight=97 
    
     export function openweathermapreturn(option: openweathermapmenu):number {
-        return parseFloat(receivei2cmessage("openweathermapreturn="+option))
+        return parseFloat(receivei2cmessage("openweathermapreturn="+option.toString()))
     } 
 	
     //% blockId=linesticker block="Line notify sticker message %message | packageID %packageID | stickerID %stickerID "
