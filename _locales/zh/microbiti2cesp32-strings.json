@@ -8,5 +8,12 @@
     "microbiti2cesp32.ReceiveMqttMessage|block": "接收MQTT的訊息",
     "microbiti2cesp32.linetoken|block": "設定Line Notify的token為 %token",
     "microbiti2cesp32.linemessage|block": "傳送Line Notify的訊息為 %message ",
-    "microbiti2cesp32.linesticker|block": "傳送Line Notify的訊息為 %message | packageID %packageID | stickerID %stickerID "
+    "microbiti2cesp32.linesticker|block": "傳送Line Notify的訊息為 %message | packageID %packageID | stickerID %stickerID ",
+    "microbiti2cesp32.openweathermapsetup|block": "設定OpenWeatherMap的密鑰 %key ",
+    "microbiti2cesp32.openweathermapcity|block": "設定OpenWeatherMap的城市為 %city ",
+    "microbiti2cesp32.openweathermapreturn|block": "讀取OpenWeatherMap的選項 %option  ",
+    "microbiti2cesp32.thingspeak1|block": "設定thingspeak的key %key | 寫入Field1 %value1",
+    "microbiti2cesp32.thingspeak2|block": "設定thingspeak的key %key | 寫入多個Field %value1",
+    "microbiti2cesp32.thingspeak3|block": "連線到Thingspeak Channel ID %key | 讀取 %value1 資料",
+    "microbiti2cesp32.thingspeak4|block": "連線到Thingspeak key %key | 寫入 Fields value | Field1 value %value1 || Field2 value %value2 Field3 value %value3 Field4 value %value4 Field5 value %value5 Field6 value %value6 Field7 value %value7"
 }
