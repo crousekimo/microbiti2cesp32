@@ -136,6 +136,17 @@ namespace microbiti2cesp32 {
     export function sendmqtt(topic: string, message: string):void {
         sendi2cmessage("sendmqtt="+topic+","+message)
     }  
+    //% blockId=linetoken block="Line notify token %token "
+    //% weight=56 
+    export function linetoken(token: string):void {
+        sendi2cmessage("linetoken="+token)
+    }  
+	
+    //% blockId=linetoken block="Line notify message %message "
+    //% weight=56 
+    export function linemessage(message: string):void {
+        sendi2cmessage("linemessage="+message)
+    }  
 			
     function sendi2cmessage(command: string):void {
         for (let index = 0; index <= command.length-1; index++) {
