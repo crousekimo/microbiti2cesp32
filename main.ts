@@ -131,61 +131,69 @@ namespace microbiti2cesp32 {
     export function setanalogR(pin: analogRpin):number {
         return parseFloat(receivei2cmessage("analogRead="+pin.toString()))
     }   
-    //% group="1.MQTT"  
+	
+    //% group="1.Setup"
+    //% blockId=setWiFi block="Set ESP32 | SSID %SSID| Pass %PASS"
+    //% weight=101
+    //% blockExternalInputs = 1
+    export function setWiFi(SSID: string, PASS: string) {
+        sendi2cmessage("setwifi="+SSID+","+PASS+",1")
+    }
+    //% group="2.MQTT"  
     //% blockId=subMqtt block="Subscribe mqtt %topic"
     //% weight=97 
     export function subMqtt(topic: string):void {
          sendi2cmessage("sebmqtt="+topic)
     }
-    //% group="1.MQTT"  
+    //% group="2.MQTT"  
     //% blockId=ReceiveMqttTopic block="receive mqtt topic"
     //% weight=97 	
     export function ReceiveMqttTopic():string {
         return receivei2cmessage("mqttrect=").substr(1)
     }  
-    //% group="1.MQTT"  
+    //% group="2.MQTT"  
     //% blockId=ReceiveMqttMessage block="receive mqtt message"
     //% weight=97 	
     export function ReceiveMqttMessage():string {
         return receivei2cmessage("mqttrecm=").substr(1)
     }  
-    //% group="1.MQTT"  
+    //% group="2.MQTT"  
     //% blockId=sendmqtt block="send mqtt topic %topic | message %message "
     //% weight=56 
     export function sendmqtt(topic: string, message: string):void {
         sendi2cmessage("sendmqtt="+topic+","+message)
     }  
-    //% group="2.Line notify"  
+    //% group="3.Line notify"  
     //% blockId=linetoken block="Line notify token %token "
     //% weight=56 
     export function linetoken(token: string):void {
         sendi2cmessage("linetoken="+token)
     }  
-    //% group="2.Line notify"  
+    //% group="3.Line notify"  
     //% blockId=linemessage block="Line notify message %message "
     //% weight=56 
     export function linemessage(message: string):void {
         sendi2cmessage("linemessage="+message)
     }  
-    //% group="2.Line notify"  
+    //% group="3.Line notify"  
     //% blockId=linesticker block="Line notify sticker message %message | packageID %packageID | stickerID %stickerID "
     //% weight=56 
     export function linesticker(message: string,packageID: number, stickerID: number):void {
         sendi2cmessage("linesticker="+message+","+packageID.toString()+","+stickerID.toString())
     }  
-  //% group="3.OpenWeatherMap"  	
+  //% group="4.OpenWeatherMap"  	
     //% blockId=openweathermapsetup block="OpenWeatherMap key %key "
     //% weight=56 
     export function openweathermapsetup(key: string):void {
         sendi2cmessage("openweathermapsetup="+key)
     }  
-    //% group="3.OpenWeatherMap"  
+    //% group="4.OpenWeatherMap"  
     //% blockId=openweathermapcity block="OpenWeatherMap city %city "
     //% weight=56 
     export function openweathermapcity(city: string):void {
         sendi2cmessage("openweathermapcity="+city)
     }  
-  //% group="3.OpenWeatherMap"  
+  //% group="4.OpenWeatherMap"  
     //% blockId=openweathermapreturn block="OpenWeatherMap option %option "
     //% weight=56 
     export function openweathermapreturn(option: openweathermapmenu):number {
@@ -193,14 +201,14 @@ namespace microbiti2cesp32 {
     } 
 
 	
-    //% group="4.Thingspeak"      
+    //% group="5.Thingspeak"      
     //% blockId=thingspeak1 block="Connect to Thingspeak key %key | Write Field1 value %value1 "
     //% weight=101 
     export function thingspeak1(key:string, value1: string):void {
         sendi2cmessage("t\="+key+","+value1)
         basic.pause(4000)
     }
-    //% group="4.Thingspeak"            
+    //% group="5.Thingspeak"            
     //% blockId=thingspeak4 
     //% block="Connect to Thingspeak key %key | Write Fields value | Field1 value %value1 || Field2 value %value2 Field3 value %value3 Field4 value %value4 Field5 value %value5 Field6 value %value6 Field7 value %value7"
     //% weight=101  
@@ -223,7 +231,7 @@ namespace microbiti2cesp32 {
         sendi2cmessage("t\="+key+","+b)
         basic.pause(8000)
     }
-    //% group="4.Thingspeak"      
+    //% group="5.Thingspeak"      
     //% blockId=thingspeak2 block="Connect to Thingspeak key %key | Write Fields value %value1 "
     //% weight=101
     export function thingspeak2(key:string, value1: number[]):void {
@@ -246,7 +254,7 @@ namespace microbiti2cesp32 {
     }
 
       
-     //% group="4.Thingspeak"  
+     //% group="5.Thingspeak"  
      //% blockId=thingspeak3 block="Connect to Thingspeak Channel ID %key | Read %value1 value"
     //% weight=101
     export function thingspeak3(key:number, value1: value555): number {
@@ -255,7 +263,7 @@ namespace microbiti2cesp32 {
     }     
 
 	
-     //% group="5.IFTTT"  
+     //% group="6.IFTTT"  
     //% blockId=sendifttt block="send ifttt key %key | event %event | value1 %value1"
     //% weight=50
     export function sendifttt(key: string, event: string, value1: string):void {
