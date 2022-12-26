@@ -116,27 +116,6 @@ namespace microbiti2cesp32 {
         return parseFloat(receivei2cmessage("analogRead="+pin.toString()))
     }   
 	
-    //% blockId=ReceiveMqtt block="receive mqtt"
-    //% weight=97 
-    export function ReceiveMqtt():void {
-        let a=receivei2cmessage("mqttrec=")
-	let strAry = a.split(',')
-	mqtttopic=strAry[0]
-        mqttmessage=strAry[1]
-    }   
-
-    //% blockId=ReceiveMqtt1 block="receive mqtt1"
-    //% weight=97 
-    export function ReceiveMqtt1():string {
-        let a = receivei2cmessage("mqttrec=")
-	if ( a.length > 1 )
-	{
-	sendi2cmessage("clearmqtt")
-	} else
-		a=""
-        return a
-    } 
-	
     //% blockId=subMqtt block="Subscribe mqtt %topic"
     //% weight=97 
     export function subMqtt(topic: string):void {
@@ -145,12 +124,12 @@ namespace microbiti2cesp32 {
     //% blockId=ReceiveMqttTopic block="receive mqtt topic"
     //% weight=97 	
     export function ReceiveMqttTopic():string {
-        return receivei2cmessage("mqttrect=")
+        return receivei2cmessage("mqttrect=").substring(1)
     }  
     //% blockId=ReceiveMqttMessage block="receive mqtt message"
     //% weight=97 	
     export function ReceiveMqttMessage():string {
-        return receivei2cmessage("mqttrecm=")
+        return receivei2cmessage("mqttrecm=").substring(1)
     }  
     //% blockId=sendmqtt block="send mqtt topic %topic | message %message "
     //% weight=56 
