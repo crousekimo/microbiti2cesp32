@@ -67,6 +67,17 @@ namespace microbiti2cesp32 {
         D36 = 36,
 	D39 = 39
      }	
+
+     export enum openweathermapmenu {
+        Lon = "lon",
+        Lat = "lat",
+        Temperature = "opentemperature",
+        Pressure = "openpressure",
+        Humidity = "openhumidity",
+	WindSpeed = "openwindspeed"
+     }
+	
+	
 	
       export enum type {
         INPUT = 2,
@@ -147,6 +158,26 @@ namespace microbiti2cesp32 {
     export function linemessage(message: string):void {
         sendi2cmessage("linemessage="+message)
     }  
+	
+	
+    //% blockId=openweathermapsetup block="OpenWeatherMap key %key "
+    //% weight=56 
+    export function openweathermapsetup(key: string):void {
+        sendi2cmessage("openweathermapsetup="+key)
+    }  
+	
+    //% blockId=openweathermapcity block="OpenWeatherMap city %city "
+    //% weight=56 
+    export function openweathermapcity(city: string):void {
+        sendi2cmessage("openweathermapcity="+city)
+    }  
+
+    //% blockId=openweathermapreturn block="OpenWeatherMap  %pin"
+    //% weight=97 
+   
+    export function openweathermapreturn(option: openweathermapmenu):number {
+        return parseFloat(receivei2cmessage("openweathermapreturn="+option))
+    } 
 	
     //% blockId=linesticker block="Line notify sticker message %message | packageID %packageID | stickerID %stickerID "
     //% weight=56 
