@@ -118,12 +118,7 @@ namespace microbiti2cesp32 {
     export function setanalogW(pin: analogWpin, XY: number):void {
         sendi2cmessage("analogWrite="+pin.toString()+","+XY.toString())    
     }
-	//% group="5.IFTTT"  
-    //% blockId=sendifttt block="send ifttt key %key | event %event | value1 %value1"
-    //% weight=50
-    export function sendifttt(key: string, event: string, value1: string):void {
-        sendi2cmessage("ifttt="+key+","+event+","+value1)    
-    }
+
 	
     //% blockId=setdigitalR block="read esp32 digital pin  %pin value"
     //% weight=98
@@ -136,37 +131,37 @@ namespace microbiti2cesp32 {
     export function setanalogR(pin: analogRpin):number {
         return parseFloat(receivei2cmessage("analogRead="+pin.toString()))
     }   
-	//% group="1.MQTT"  
+    //% group="1.MQTT"  
     //% blockId=subMqtt block="Subscribe mqtt %topic"
     //% weight=97 
     export function subMqtt(topic: string):void {
          sendi2cmessage("sebmqtt="+topic)
     }
-		//% group="1.MQTT"  
+    //% group="1.MQTT"  
     //% blockId=ReceiveMqttTopic block="receive mqtt topic"
     //% weight=97 	
     export function ReceiveMqttTopic():string {
         return receivei2cmessage("mqttrect=").substr(1)
     }  
-		//% group="1.MQTT"  
+    //% group="1.MQTT"  
     //% blockId=ReceiveMqttMessage block="receive mqtt message"
     //% weight=97 	
     export function ReceiveMqttMessage():string {
         return receivei2cmessage("mqttrecm=").substr(1)
     }  
-		//% group="1.MQTT"  
+    //% group="1.MQTT"  
     //% blockId=sendmqtt block="send mqtt topic %topic | message %message "
     //% weight=56 
     export function sendmqtt(topic: string, message: string):void {
         sendi2cmessage("sendmqtt="+topic+","+message)
     }  
-   //% group="2.Line notify"  
+    //% group="2.Line notify"  
     //% blockId=linetoken block="Line notify token %token "
     //% weight=56 
     export function linetoken(token: string):void {
         sendi2cmessage("linetoken="+token)
     }  
-	 //% group="2.Line notify"  
+    //% group="2.Line notify"  
     //% blockId=linemessage block="Line notify message %message "
     //% weight=56 
     export function linemessage(message: string):void {
@@ -184,7 +179,7 @@ namespace microbiti2cesp32 {
     export function openweathermapsetup(key: string):void {
         sendi2cmessage("openweathermapsetup="+key)
     }  
-	  //% group="2.OpenWeatherMap"  
+    //% group="2.OpenWeatherMap"  
     //% blockId=openweathermapcity block="OpenWeatherMap city %city "
     //% weight=56 
     export function openweathermapcity(city: string):void {
@@ -258,7 +253,14 @@ namespace microbiti2cesp32 {
         let a=receivei2cmessage("tt="+convertToText(key)+","+convertToText(value1)+",1")
         return parseFloat(a)
     }     
+
 	
+     //% group="4.IFTTT"  
+    //% blockId=sendifttt block="send ifttt key %key | event %event | value1 %value1"
+    //% weight=50
+    export function sendifttt(key: string, event: string, value1: string):void {
+        sendi2cmessage("ifttt="+key+","+event+","+value1)    
+    }
 	
     function sendi2cmessage(command: string):void {
         for (let index = 0; index <= command.length-1; index++) {
