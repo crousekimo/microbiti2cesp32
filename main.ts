@@ -24,7 +24,7 @@ namespace microbiti2cesp32 {
         field8 = 8
      }
     //% group="1.Setup"
-    //% blockId=setWiFi block="Set ESP32 | SSID %SSID| Pass %PASS"
+    //% blockId=setWiFi block="Set WIFI | SSID %SSID| Pass %PASS"
     //% weight=101
     //% blockExternalInputs = 1
     export function setWiFi(SSID: string, PASS: string) {
