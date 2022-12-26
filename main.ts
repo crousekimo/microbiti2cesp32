@@ -142,7 +142,7 @@ namespace microbiti2cesp32 {
         sendi2cmessage("linetoken="+token)
     }  
 	
-    //% blockId=linetoken block="Line notify message %message "
+    //% blockId=linemessage block="Line notify message %message "
     //% weight=56 
     export function linemessage(message: string):void {
         sendi2cmessage("linemessage="+message)
