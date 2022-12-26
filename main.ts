@@ -89,7 +89,17 @@ namespace microbiti2cesp32 {
      }
      let mqttmessage="";
      let mqtttopic="";
-      
+     
+     export enum value555 {
+        field1 = 1 ,
+        field2 = 2,
+        field3 = 3,
+        field4 = 4,
+        field5 = 5,
+        field6 = 6,
+        field7 = 7,
+        field8 = 8
+     }
     //% blockId=setpinmode block="set esp32 digital pin %pin | for %XY"
     //% weight=101
     export function setpinmode(pin: digitalWpin, XY: type):void {
