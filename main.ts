@@ -173,19 +173,19 @@ namespace microbiti2cesp32 {
     export function linesticker(message: string,packageID: number, stickerID: number):void {
         sendi2cmessage("linesticker="+message+","+packageID.toString()+","+stickerID.toString())
     }  
-  //% group="2.OpenWeatherMap"  	
+  //% group="3.OpenWeatherMap"  	
     //% blockId=openweathermapsetup block="OpenWeatherMap key %key "
     //% weight=56 
     export function openweathermapsetup(key: string):void {
         sendi2cmessage("openweathermapsetup="+key)
     }  
-    //% group="2.OpenWeatherMap"  
+    //% group="3.OpenWeatherMap"  
     //% blockId=openweathermapcity block="OpenWeatherMap city %city "
     //% weight=56 
     export function openweathermapcity(city: string):void {
         sendi2cmessage("openweathermapcity="+city)
     }  
-  //% group="2.OpenWeatherMap"  
+  //% group="3.OpenWeatherMap"  
     //% blockId=openweathermapreturn block="OpenWeatherMap option %option "
     //% weight=56 
     export function openweathermapreturn(option: openweathermapmenu):number {
@@ -193,14 +193,14 @@ namespace microbiti2cesp32 {
     } 
 
 	
-    //% group="3.Thingspeak"      
+    //% group="4.Thingspeak"      
     //% blockId=thingspeak1 block="Connect to Thingspeak key %key | Write Field1 value %value1 "
     //% weight=101 
     export function thingspeak1(key:string, value1: string):void {
         sendi2cmessage("t\="+key+","+value1)
         basic.pause(4000)
     }
-    //% group="3.Thingspeak"            
+    //% group="4.Thingspeak"            
     //% blockId=thingspeak4 
     //% block="Connect to Thingspeak key %key | Write Fields value | Field1 value %value1 || Field2 value %value2 Field3 value %value3 Field4 value %value4 Field5 value %value5 Field6 value %value6 Field7 value %value7"
     //% weight=101  
@@ -223,7 +223,7 @@ namespace microbiti2cesp32 {
         sendi2cmessage("t\="+key+","+b)
         basic.pause(8000)
     }
-    //% group="3.Thingspeak"      
+    //% group="4.Thingspeak"      
     //% blockId=thingspeak2 block="Connect to Thingspeak key %key | Write Fields value %value1 "
     //% weight=101
     export function thingspeak2(key:string, value1: number[]):void {
@@ -246,7 +246,7 @@ namespace microbiti2cesp32 {
     }
 
       
-     //% group="3.Thingspeak"  
+     //% group="4.Thingspeak"  
      //% blockId=thingspeak3 block="Connect to Thingspeak Channel ID %key | Read %value1 value"
     //% weight=101
     export function thingspeak3(key:number, value1: value555): number {
@@ -255,7 +255,7 @@ namespace microbiti2cesp32 {
     }     
 
 	
-     //% group="4.IFTTT"  
+     //% group="5.IFTTT"  
     //% blockId=sendifttt block="send ifttt key %key | event %event | value1 %value1"
     //% weight=50
     export function sendifttt(key: string, event: string, value1: string):void {
