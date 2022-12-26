@@ -172,9 +172,8 @@ namespace microbiti2cesp32 {
         sendi2cmessage("openweathermapcity="+city)
     }  
 
-    //% blockId=openweathermapreturn block="OpenWeatherMap  %pin"
-    //% weight=97 
-   
+    //% blockId=openweathermapreturn block="OpenWeatherMap option %option "
+    //% weight=56 
     export function openweathermapreturn(option: openweathermapmenu):number {
         return parseFloat(receivei2cmessage("openweathermapreturn="+option.toString()))
     } 
