@@ -1,10 +1,12 @@
 {
     "microbiti2cesp32|block": "i2c控制esp32",
-    "microbiti2cesp32.setpinmode|block": "用i2c設定esp32數位腳位 %pin|為 %XY",
-    "microbiti2cesp32.setdigitalW|block": "用i2c設定esp32數位腳位 %pin|的值為 %XY",
-    "microbiti2cesp32.setanalogW|block": "用i2c設定esp32數位腳位 %pin|的PWM輸出值為 %XY",
-    "microbiti2cesp32.setdigitalR|block": "用i2c讀取esp32數位腳位 %pin 的值",
-    "microbiti2cesp32.setanalogR|block": "用i2c讀取esp32類比腳位 %pin 的值",
-    "microbiti2cesp32.sendifttt|block": "用i2c讓esp32傳送IFTTT key %key | 事件 %event | 值1 %value1 ",
-    "microbiti2cesp32.sendmqtt|block": "發送MQTTT訊息 主題 %topic | 訊息 %message "
+    "microbiti2cesp32.sendifttt|block": "傳送IFTTT key %key | 事件 %event | 值1 %value1 ",
+    "microbiti2cesp32.sendmqtt|block": "發送MQTTT訊息 主題 %topic | 訊息 %message ",
+    "microbiti2cesp32.setWiFi|block": "設定WIFI | SSID %SSID| Pass %PASS",
+    "microbiti2cesp32.subMqtt|block": "訂閱MQTT主題 %topic",
+    "microbiti2cesp32.ReceiveMqttTopic|block": "接收MQTT的主題",
+    "microbiti2cesp32.ReceiveMqttMessage|block": "接收MQTT的訊息",
+    "microbiti2cesp32.linetoken|block": "設定Line Notify的token為 %token",
+    "microbiti2cesp32.linemessage|block": "傳送Line Notify的訊息為 %message ",
+    "microbiti2cesp32.linesticker|block": "傳送Line Notify的訊息為 %message | packageID %packageID | stickerID %stickerID "
 }
