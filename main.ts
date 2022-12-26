@@ -192,8 +192,7 @@ namespace microbiti2cesp32 {
     //% blockId=thingspeak1 block="Connect to Thingspeak key %key | Write Field1 value %value1 "
     //% weight=101 
     export function thingspeak1(key:string, value1: string):void {
-        check()
-        serial.writeLine("t\="+key+","+value1+"\\n")
+        sendi2cmessage("t\="+key+","+value1)
         basic.pause(4000)
     }
     //% group="3.Thingspeak"            
@@ -202,7 +201,6 @@ namespace microbiti2cesp32 {
     //% weight=101  
     //% blockExternalInputs=1
     export function thingspeak4(key:string, value1: number, value2?:number, value3?:number, value4?:number, value5?:number, value6?:number, value7?:number):void {    
-        check()
         let b=""
         let i
         let value12:number[]=[value1,value2,value3,value4,value5,value6,value7]
@@ -217,14 +215,13 @@ namespace microbiti2cesp32 {
                     b=b+"\&field"+c.toString()+"="+value12[i].toString()
               }
         }
-        serial.writeLine("t\="+key+","+b+"\\n")
+        sendi2cmessage("t\="+key+","+b)
         basic.pause(8000)
     }
     //% group="3.Thingspeak"      
     //% blockId=thingspeak2 block="Connect to Thingspeak key %key | Write Fields value %value1 "
     //% weight=101
     export function thingspeak2(key:string, value1: number[]):void {
-        check()
         let a=value1.length
         let b=""
         let i
@@ -239,7 +236,7 @@ namespace microbiti2cesp32 {
                     b=b+"\&field"+c.toString()+"="+value1[i].toString()
               }
         }
-        serial.writeLine("t\="+key+","+b+"\\n")
+        sendi2cmessage("t\="+key+","+b)
         basic.pause(8000)
     }
 
@@ -248,13 +245,8 @@ namespace microbiti2cesp32 {
      //% blockId=thingspeak3 block="Connect to Thingspeak Channel ID %key | Read %value1 value"
     //% weight=101
     export function thingspeak3(key:number, value1: value555): number {
-        check()
-        serial.writeLine("tt="+convertToText(key)+","+convertToText(value1)+",1"+"\\n")
-        basic.pause(500)
-        let a=serial.readString()
-        basic.pause(500)
+        let a=receivei2cmessage("tt="+convertToText(key)+","+convertToText(value1)+",1")
         return parseFloat(a)
-
     }     
 	
 	
