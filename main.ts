@@ -165,8 +165,9 @@ namespace microbiti2cesp32 {
     //% group="7.Google表單寫入試算表"  
     //% blockId=googleform block="Google From write ans number %ansnumber ans %ans "
     //% weight=56 
-    export function googleform(ansnumber: number, ans: string):void {
-        sendi2cmessage("googleform="+ansnumber.toString()+","+ans)
+    export function googleform(ansnumber: number, ans: string):string {
+        let a=receivei2cmessage("googleform="+ansnumber.toString()+","+ans)
+	return a
     }  
 	
 	
