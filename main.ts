@@ -163,24 +163,11 @@ namespace microbiti2cesp32 {
 	
 	
     //% group="7.Google表單寫入試算表"  
-    //% blockId=googleformans block="Google From write ans number %ansnumber ans %ans "
+    //% blockId=googleform block="Google From write ans number %ansnumber ans %ans "
     //% weight=56 
-    export function googleformans(ansnumber: number, ans: string):void {
-        sendi2cmessage("googleformans="+ansnumber.toString()+","+ans)
+    export function googleform(ansnumber: number, ans: string):void {
+        sendi2cmessage("googleform="+ansnumber.toString()+","+ans)
     }  
-	
-	
-    //% group="7.Google表單寫入試算表"  
-    //% blockId=googleformid block="Google From write urlid %url1 urlq %url2"
-    //% weight=40 
-    export function googleformid(url1: string,url2: string):void {
-        sendi2cmessage("googleformid="+url1)
-	basic.pause(1000)
-        sendi2cmessage("googleformq="+url2)
-        basic.pause(4000)
-
-    }
-
 	
 	
 	
