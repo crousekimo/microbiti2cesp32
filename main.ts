@@ -161,6 +161,23 @@ namespace microbiti2cesp32 {
         sendi2cmessage("ifttt="+key+","+event+","+value1)    
     }
 	
+	
+    //% group="7.Google表單寫入試算表"  
+    //% blockId=googleformans block="Google From write ans number %ansnumber ans %ans "
+    //% weight=56 
+    export function googleformans(ansnumber: number, ans: string):void {
+        sendi2cmessage("googleformans="+ans_number.toString()+","+ans)
+    }  
+	
+    //% group="7.Google表單寫入試算表"  
+    //% blockId=googleformurl block="Google From write url %url "
+    //% weight=56 
+    export function googleformurl(url: string):void {
+        sendi2cmessage("googleformurl="+url)
+    }  
+	
+	
+	
     function sendi2cmessage(command: string):void {
         for (let index = 0; index <= command.length-1; index++) {
         	pins.i2cWriteNumber(
@@ -178,6 +195,10 @@ namespace microbiti2cesp32 {
 	)
     } 
     
+
+	
+	
+	
     function receivei2cmessage(command: string):string {
     let i2cmessage2 = ""
     let aa: number[] = []
