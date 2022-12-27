@@ -170,10 +170,10 @@ namespace microbiti2cesp32 {
     }  
 	
     //% group="7.Google表單寫入試算表"  
-    //% blockId=googleformurl block="Google From write url %url "
+    //% blockId=googleformurl block="Google From write urlid %url1 urlq %url2"
     //% weight=56 
-    export function googleformurl(url: string):void {
-        sendi2cmessage("googleformurl="+url)
+    export function googleformurl(url: string,url2: string):void {
+        sendi2cmessage("googleformurl="+url1+","+url2)
     }  
 	
 	
