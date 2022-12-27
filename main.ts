@@ -175,8 +175,6 @@ namespace microbiti2cesp32 {
     //% weight=40 
     export function googleformid(url1: string,url2: string):void {
         sendi2cmessage("googleformid="+url1)
-	basic.pause(300)
-        sendi2cmessage("googleformq="+url2)
     }
 
 	
