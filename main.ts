@@ -166,7 +166,7 @@ namespace microbiti2cesp32 {
     //% blockId=googleformans block="Google From write ans number %ansnumber ans %ans "
     //% weight=56 
     export function googleformans(ansnumber: number, ans: string):void {
-        sendi2cmessage("googleformans="+ans_number.toString()+","+ans)
+        sendi2cmessage("googleformans="+ansnumber.toString()+","+ans)
     }  
 	
     //% group="7.Google表單寫入試算表"  
