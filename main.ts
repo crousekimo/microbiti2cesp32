@@ -96,7 +96,7 @@ namespace microbiti2cesp32 {
     //% blockId=thingspeak1 block="Connect to Thingspeak key %key | Write Field1 value %value1 "
     //% weight=101 
     export function thingspeak1(key:string, value1: string):void {
-        sendi2cmessage("t\="+key+","+value1)
+        sendi2cmessage("t="+key+","+value1)
         basic.pause(4000)
     }
     //% group="5.Thingspeak"            
@@ -119,7 +119,7 @@ namespace microbiti2cesp32 {
                     b=b+"\&field"+c.toString()+"="+value12[i].toString()
               }
         }
-        sendi2cmessage("t\="+key+","+b)
+        sendi2cmessage("t="+key+","+b)
         basic.pause(8000)
     }
     //% group="5.Thingspeak"      
@@ -140,7 +140,7 @@ namespace microbiti2cesp32 {
                     b=b+"\&field"+c.toString()+"="+value1[i].toString()
               }
         }
-        sendi2cmessage("t\="+key+","+b)
+        sendi2cmessage("t="+key+","+b)
         basic.pause(8000)
     }
 
@@ -161,16 +161,7 @@ namespace microbiti2cesp32 {
         sendi2cmessage("ifttt="+key+","+event+","+value1)    
     }
 	
-	
-    //% group="7.Google表單寫入試算表"  
-    //% blockId=googleform block="Google From write ans number %ansnumber ans %ans "
-    //% weight=56 
-    export function googleform(ansnumber: number, ans: string):void {
-        sendi2cmessage("googleform="+ansnumber.toString()+","+ans)
-    }  
-	
-	
-	
+
     function sendi2cmessage(command: string):void {
         for (let index = 0; index <= command.length-1; index++) {
         	pins.i2cWriteNumber(
@@ -188,7 +179,12 @@ namespace microbiti2cesp32 {
 	)
     } 
     
-
+    //% group="7.NTP Protocol"  
+    //% blockId=timeget block="NTP get"
+    //% weight=56 
+    export function timeget():number {
+        return parseFloat(receivei2cmessage("timeget=").substr(1))
+    } 
 	
 	
 	
