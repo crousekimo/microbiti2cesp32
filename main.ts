@@ -111,8 +111,8 @@ namespace microbiti2cesp32 {
     //% weight=101 
     export function thingspeak1(key:string, value1: string):void {
         sendi2cmessage("t="+key+","+value1)
-        basic.pause(4000)
     }
+	/*
     //% group="5.Thingspeak"            
     //% blockId=thingspeak4 
     //% block="Connect to Thingspeak key %key | Write Fields value | Field1 value %value1 || Field2 value %value2 Field3 value %value3 Field4 value %value4 Field5 value %value5 Field6 value %value6 Field7 value %value7"
@@ -134,8 +134,8 @@ namespace microbiti2cesp32 {
               }
         }
         sendi2cmessage("t="+key+","+b)
-        basic.pause(8000)
     }
+    */
     //% group="5.Thingspeak"      
     //% blockId=thingspeak2 block="Connect to Thingspeak key %key | Write Fields value %value1 "
     //% weight=101
@@ -155,7 +155,6 @@ namespace microbiti2cesp32 {
               }
         }
         sendi2cmessage("t="+key+","+b)
-        basic.pause(8000)
     }
 
       
