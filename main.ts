@@ -28,6 +28,7 @@ namespace microbiti2cesp32 {
     //% weight=101
     //% blockExternalInputs = 1
     export function setWiFi(SSID: string, PASS: string) {
+	basic.pause(1000)
         sendi2cmessage("setwifi="+SSID+","+PASS+",1")
 	basic.pause(2000)
     }
