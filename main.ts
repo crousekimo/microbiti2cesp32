@@ -36,6 +36,7 @@ namespace microbiti2cesp32 {
     //% blockId=subMqtt block="Subscribe mqtt %topic"
     //% weight=100 
     export function subMqtt(topic: string):void {
+	 basic.pause(3000)
          sendi2cmessage("sebmqtt="+topic)
     }
     //% group="2.MQTT"  
