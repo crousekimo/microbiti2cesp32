@@ -23,12 +23,21 @@ namespace microbiti2cesp32 {
         field7 = 7,
         field8 = 8
      }
+     let aa=0;
+     function check()
+     {
+	     if (aa==0)
+	     {
+		     basic.pause(4000)
+		     aa=1
+	     }
+     }
     //% group="1.Setup"
     //% blockId=setWiFi block="Set WIFI | SSID %SSID| Pass %PASS"
     //% weight=101
     //% blockExternalInputs = 1
     export function setWiFi(SSID: string, PASS: string) {
-	basic.pause(3000)
+	check()
         sendi2cmessage("setwifi="+SSID+","+PASS+",1")
 	basic.pause(2000)
     }
@@ -36,7 +45,7 @@ namespace microbiti2cesp32 {
     //% blockId=subMqtt block="Subscribe mqtt %topic"
     //% weight=100 
     export function subMqtt(topic: string):void {
-	 basic.pause(3000)
+	 check()
          sendi2cmessage("sebmqtt="+topic)
     }
     //% group="2.MQTT"  
@@ -61,6 +70,7 @@ namespace microbiti2cesp32 {
     //% blockId=linetoken block="Line notify token %token "
     //% weight=56 
     export function linetoken(token: string):void {
+	check()
         sendi2cmessage("linetoken="+token)
     }  
     //% group="3.Line notify"  
@@ -79,6 +89,7 @@ namespace microbiti2cesp32 {
     //% blockId=openweathermapsetup block="OpenWeatherMap key %key "
     //% weight=56 
     export function openweathermapsetup(key: string):void {
+	check()
         sendi2cmessage("openweathermapsetup="+key)
     }  
     //% group="4.OpenWeatherMap"  
