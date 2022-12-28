@@ -130,7 +130,7 @@ namespace microbiti2cesp32 {
               }else if (value12[i]!=null)
               {
                     let c=i+1
-                    b=b+"\&field"+c.toString()+"="+value12[i].toString()
+                    b=b+"&field"+c.toString()+"="+value12[i].toString()
               }
         }
         sendi2cmessage("t="+key+","+b)
@@ -151,7 +151,7 @@ namespace microbiti2cesp32 {
               }else
               {
                     let c=i+1
-                    b=b+"\&field"+c.toString()+"="+value1[i].toString()
+                    b=b+"&field"+c.toString()+"="+value1[i].toString()
               }
         }
         sendi2cmessage("t="+key+","+b)
