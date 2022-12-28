@@ -50,7 +50,7 @@ namespace microbiti2cesp32 {
     }
     //% group="2.MQTT"  
     //% blockId=ReceiveMqttTopic block="receive mqtt topic"
-    //% weight=97 	
+    //% weight=98	
     export function ReceiveMqttTopic():string {
         return receivei2cmessage("mqttrect=").substr(1)
     }  
@@ -68,14 +68,14 @@ namespace microbiti2cesp32 {
     }  
     //% group="3.Line notify"  
     //% blockId=linetoken block="Line notify token %token "
-    //% weight=56 
+    //% weight=100 
     export function linetoken(token: string):void {
 	check()
         sendi2cmessage("linetoken="+token)
     }  
     //% group="3.Line notify"  
     //% blockId=linemessage block="Line notify message %message "
-    //% weight=56 
+    //% weight=57 
     export function linemessage(message: string):void {
         sendi2cmessage("linemessage="+message)
     }  
@@ -87,20 +87,20 @@ namespace microbiti2cesp32 {
     }  
   //% group="4.OpenWeatherMap"  	
     //% blockId=openweathermapsetup block="OpenWeatherMap key %key "
-    //% weight=56 
+    //% weight=99 
     export function openweathermapsetup(key: string):void {
 	check()
         sendi2cmessage("openweathermapsetup="+key)
     }  
     //% group="4.OpenWeatherMap"  
     //% blockId=openweathermapcity block="OpenWeatherMap city %city "
-    //% weight=56 
+    //% weight=45
     export function openweathermapcity(city: string):void {
         sendi2cmessage("openweathermapcity="+city)
     }  
   //% group="4.OpenWeatherMap"  
     //% blockId=openweathermapreturn block="OpenWeatherMap option %option "
-    //% weight=56 
+    //% weight=20 
     export function openweathermapreturn(option: openweathermapmenu):number {
         return parseFloat(receivei2cmessage("openweathermapreturn="+option.toString()).substr(1))
     } 
