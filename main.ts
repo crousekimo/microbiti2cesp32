@@ -10,6 +10,16 @@ namespace microbiti2cesp32 {
 	WindSpeed = 6
      }
 
+     export enum ntptime {
+        Your = 1,
+        Month = 2,
+        Day = 3,
+        Hour = 4,
+        Min = 5,
+	Sec = 6
+     }
+	
+     let nptgettime="";	
      let mqttmessage="";
      let mqtttopic="";
      
@@ -183,7 +193,30 @@ namespace microbiti2cesp32 {
     export function sendifttt(key: string, event: string, value1: string):void {
         sendi2cmessage("ifttt="+key+","+event+","+value1)    
     }
+
 	
+     //% group="7.NTP"  
+    //% blockId=ntpsetup block="NTP setup"
+    //% weight=50
+    export function ntpsetup():void {
+        sendi2cmessage("ntps=")    
+    }
+	
+     //% group="7.NTP"  
+    //% blockId=ntpget block="ntpget"
+    //% weight=50
+    export function ntpget():string {
+        sendi2cmessage("nptget1=")
+	basic.pause(2000)
+	return nptgettime=receivei2cmessage("nptget2=")
+    }
+	
+     //% group="7.NTP"  
+    //% blockId=ntpget block=get %ntp1"
+    //% weight=50
+    export function ntpgett(ntp1: ntptime):void {
+        sendi2cmessage("ntpget="+ntp1.toString())    
+    }
 
     function sendi2cmessage(command: string):void {
         for (let index = 0; index <= command.length-1; index++) {
