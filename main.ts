@@ -161,7 +161,7 @@ namespace microbiti2cesp32 {
      //% group="5.Thingspeak"  
      //% blockId=thingspeak3 block="Connect to Thingspeak Channel ID %key | Read %value1 value"
     //% weight=101
-    export function thingspeak3(key:number, value1: value555): number {
+    export function thingspeak3(key:number, value1: value555): string {
         let a=receivei2cmessage("tt="+convertToText(key)+","+convertToText(value1)+",1")
         return a
     }     
