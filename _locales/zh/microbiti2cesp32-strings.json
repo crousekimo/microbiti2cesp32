@@ -6,6 +6,7 @@
     "microbiti2cesp32.iprequest|block": "取得IP位址",
     "microbiti2cesp32.ntpsetup|block": "設定網路時間",
     "microbiti2cesp32.ntpget|block": "從網路上取得時間",
+    "microbiti2cesp32.google|block": "送出資料給google",
     "microbiti2cesp32.ntpgettime|block": "讀取時間 %time1",
     "microbiti2cesp32.subMqtt|block": "訂閱MQTT主題 %topic",
     "microbiti2cesp32.ReceiveMqttTopic|block": "接收MQTT的主題",
