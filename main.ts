@@ -18,6 +18,7 @@ namespace microbiti2cesp32 {
         Min = 5,
 	Sec = 6
      }
+     let datelist: string[] = []
 	
      let nptgettime="";	
      let mqttmessage="";
@@ -206,11 +207,18 @@ namespace microbiti2cesp32 {
      //% group="7.NTP"  
     //% blockId=ntpget block="ntpget"
     //% weight=50
-    export function ntpget():string {
+    export function ntpget():void {
         sendi2cmessage("ntpget1=")
 	basic.pause(2000)
-	nptgettime=receivei2cmessage("ntpget2=")
-	return nptgettime
+	nptgettime=receivei2cmessage("ntpget2=").substr(1)
+	datelist=nptgettime.split(",")
+    }
+	
+    //% group="7.NTP"  
+    //% blockId=ntpgettime block="read %time1"
+    //% weight=50
+    export function ntpgettime(time1: ntptime):number {
+        return parseFloat(datelist[time1])
     }
 
     function sendi2cmessage(command: string):void {
