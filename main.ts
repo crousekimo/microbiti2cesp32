@@ -202,15 +202,6 @@ namespace microbiti2cesp32 {
 	)
     } 
     
-    //% group="7.NTP Protocol"  
-    //% blockId=timeget block="NTP get"
-    //% weight=56 
-    export function timeget():string {
-        return receivei2cmessage("timeget=").substr(1)
-    } 
-	
-	
-	
     function receivei2cmessage(command: string):string {
     let i2cmessage2 = ""
     let aa: number[] = []
@@ -241,34 +232,4 @@ namespace microbiti2cesp32 {
     return i2cmessage2	    
     }
 
-    function receivei2cmessage1(command: string):string {
-    let i2cmessage2 = ""
-    let aa: number[] = []
-    for (let index2 = 0; index2 <= command.length-1; index2++) {
-        pins.i2cWriteNumber(
-        8,
-        command.charCodeAt(index2),
-        NumberFormat.Int8LE,
-        false
-        )
-    }
-    pins.i2cWriteNumber(
-    8,
-    10,
-    NumberFormat.Int8LE,
-    false
-    )
-    i2cmessage2=""
-    basic.pause(2000)
-    for (let index = 0; index <= 118; index++) {
-        let dd = pins.i2cReadBuffer(8,952,false)
-        let messagecheck2 = dd.getNumber(NumberFormat.Int8LE, index)
-        if (messagecheck2 == -1) {
-            break;
-        }else {
-            i2cmessage2 = i2cmessage2 + String.fromCharCode(messagecheck2)
-	}
-    }
-    return i2cmessage2	    
-    }
 }
