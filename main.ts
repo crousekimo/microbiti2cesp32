@@ -36,10 +36,18 @@ namespace microbiti2cesp32 {
     //% blockId=setWiFi block="Set WIFI | SSID %SSID| Pass %PASS"
     //% weight=101
     //% blockExternalInputs = 1
-    export function setWiFi(SSID: string, PASS: string) {
+    export function setWiFi(SSID: string, PASS: string):void {
 	check()
         sendi2cmessage("setwifi="+SSID+","+PASS+",1")
 	basic.pause(2000)
+    }
+    //% group="1.Setup"
+    //% blockId=iprequest block="Read WIFI IP"
+    //% weight=50
+    //% blockExternalInputs = 1
+    export function iprequest():string {
+	check()
+        return receivei2cmessage("iprequest=").substr(1)
     }
     //% group="2.MQTT"  
     //% blockId=subMqtt block="Subscribe mqtt %topic"
