@@ -230,8 +230,6 @@ namespace microbiti2cesp32 {
     }
     return i2cmessage2	    
     }
-}
-
 
     function receivei2cmessage1(command: string):string {
     let i2cmessage2 = ""
