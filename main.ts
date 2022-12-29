@@ -221,6 +221,15 @@ namespace microbiti2cesp32 {
         return parseFloat(datelist[time1])
     }
 
+     //% group="8.google"  
+    //% blockId=google block="NTP setup"
+    //% weight=70
+    export function google():void {
+        sendi2cmessage("google=")    
+    }
+	
+	
+	
     function sendi2cmessage(command: string):void {
         for (let index = 0; index <= command.length-1; index++) {
         	pins.i2cWriteNumber(
