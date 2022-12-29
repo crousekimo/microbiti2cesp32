@@ -11,12 +11,12 @@ namespace microbiti2cesp32 {
      }
 
      export enum ntptime {
-        Your = 1,
-        Month = 2,
-        Day = 3,
-        Hour = 4,
-        Min = 5,
-	Sec = 6
+        Your = 0,
+        Month = 1,
+        Day = 2,
+        Hour = 3,
+        Min = 4,
+	Sec = 5
      }
      let datelist: string[] = []
 	
