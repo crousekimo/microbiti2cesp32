@@ -199,6 +199,7 @@ namespace microbiti2cesp32 {
     //% blockId=ntpsetup block="NTP setup"
     //% weight=50
     export function ntpsetup():void {
+	check()
         sendi2cmessage("ntps=")    
     }
 	
