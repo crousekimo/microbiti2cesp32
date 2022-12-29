@@ -197,7 +197,7 @@ namespace microbiti2cesp32 {
 	
      //% group="7.NTP"  
     //% blockId=ntpsetup block="NTP setup"
-    //% weight=50
+    //% weight=70
     export function ntpsetup():void {
 	check()
         sendi2cmessage("ntps=")    
@@ -209,12 +209,13 @@ namespace microbiti2cesp32 {
     export function ntpget():string {
         sendi2cmessage("nptget1=")
 	basic.pause(2000)
-	return nptgettime=receivei2cmessage("nptget2=")
+	nptgettime=receivei2cmessage("nptget2=")
+	return nptgettime
     }
 	
      //% group="7.NTP"  
     //% blockId=ntpgett block="get %ntp1"
-    //% weight=50
+    //% weight=30
     export function ntpgett(ntp1: ntptime):void {
         sendi2cmessage("ntpgett="+ntp1.toString())    
     }
