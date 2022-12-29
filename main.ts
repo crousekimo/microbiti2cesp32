@@ -212,10 +212,10 @@ namespace microbiti2cesp32 {
     }
 	
      //% group="7.NTP"  
-    //% blockId=ntpget block=get %ntp1"
+    //% blockId=ntpgett block=get %ntp1"
     //% weight=50
     export function ntpgett(ntp1: ntptime):void {
-        sendi2cmessage("ntpget="+ntp1.toString())    
+        sendi2cmessage("ntpgett="+ntp1.toString())    
     }
 
     function sendi2cmessage(command: string):void {
