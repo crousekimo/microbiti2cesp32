@@ -225,7 +225,7 @@ namespace microbiti2cesp32 {
     //% blockId=google block="NTP setup"
     //% weight=70
     export function google():void {
-        sendi2cmessage("g=")    
+        sendi2cmessage("google=")    
     }
 	
 	
