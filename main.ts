@@ -162,7 +162,7 @@ namespace microbiti2cesp32 {
      //% blockId=thingspeak3 block="Connect to Thingspeak Channel ID %key | Read %value1 value"
     //% weight=101
     export function thingspeak3(key:number, value1: value555): string {
-        let a=receivei2cmessage("tt="+convertToText(key)+","+convertToText(value1)+",1")
+        let a=receivei2cmessage1("tt="+convertToText(key)+","+convertToText(value1)+",1")
         return a
     }     
 
@@ -219,6 +219,39 @@ namespace microbiti2cesp32 {
     false
     )
     i2cmessage2=""
+    for (let index = 0; index <= 118; index++) {
+        let dd = pins.i2cReadBuffer(8,952,false)
+        let messagecheck2 = dd.getNumber(NumberFormat.Int8LE, index)
+        if (messagecheck2 == -1) {
+            break;
+        }else {
+            i2cmessage2 = i2cmessage2 + String.fromCharCode(messagecheck2)
+	}
+    }
+    return i2cmessage2	    
+    }
+}
+
+
+    function receivei2cmessage1(command: string):string {
+    let i2cmessage2 = ""
+    let aa: number[] = []
+    for (let index2 = 0; index2 <= command.length-1; index2++) {
+        pins.i2cWriteNumber(
+        8,
+        command.charCodeAt(index2),
+        NumberFormat.Int8LE,
+        false
+        )
+    }
+    pins.i2cWriteNumber(
+    8,
+    10,
+    NumberFormat.Int8LE,
+    false
+    )
+    i2cmessage2=""
+    basic.pause(3000)
     for (let index = 0; index <= 118; index++) {
         let dd = pins.i2cReadBuffer(8,952,false)
         let messagecheck2 = dd.getNumber(NumberFormat.Int8LE, index)
