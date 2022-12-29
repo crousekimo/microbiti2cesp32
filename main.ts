@@ -163,7 +163,7 @@ namespace microbiti2cesp32 {
     //% weight=101
     export function thingspeak3(key:number, value1: value555): number {
         let a=receivei2cmessage("tt="+convertToText(key)+","+convertToText(value1)+",1")
-        return parseFloat(a)
+        return parseFloat(a.substr(1))
     }     
 
 	
