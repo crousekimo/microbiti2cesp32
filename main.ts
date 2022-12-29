@@ -222,7 +222,7 @@ namespace microbiti2cesp32 {
     }
 
      //% group="8.google"  
-    //% blockId=google block="NTP setup"
+    //% blockId=google block="Send to Google form"
     //% weight=70
     export function google():void {
         sendi2cmessage("google=")    
