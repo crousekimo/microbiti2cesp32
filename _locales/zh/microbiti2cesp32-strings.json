@@ -14,7 +14,7 @@
     "microbiti2cesp32.linetoken|block": "設定Line Notify的token為 %token",
     "microbiti2cesp32.googler|block": "取得google試算表 id %googleid 列 %googlerow 行 %googlecol",
     "microbiti2cesp32.google2|block": "設定google表單url為 %google_url",
-    "microbiti2cesp32.google1|block": "設定google表單第 %google_number 題為 %",
+    "microbiti2cesp32.google1|block": "設定google表單第 %google_number 題為 %google_ans",
     "microbiti2cesp32.linemessage|block": "傳送Line Notify的訊息為 %message ",
     "microbiti2cesp32.linesticker|block": "傳送Line Notify的訊息為 %message | packageID %packageID | stickerID %stickerID ",
     "microbiti2cesp32.openweathermapsetup|block": "設定OpenWeatherMap的密鑰 %key ",
