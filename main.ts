@@ -224,7 +224,7 @@ namespace microbiti2cesp32 {
      //% group="8.google"  
     //% blockId=google1 block="set google form question %google_number as %google_ans" 
     //% weight=70
-    export function google1(google_number: number=1, google_ans: string):void {
+    export function google1(google_number: number, google_ans: string):void {
         sendi2cmessage("google1="+convertToText(google_number)+","+google_ans)  
     }
 	
@@ -245,7 +245,7 @@ namespace microbiti2cesp32 {
      //% group="8.google"  
     //% blockId=googler block="get google sheet id %googleid row %googlerow col %googlecol"
     //% weight=30
-    export function googler(googleid: string, googlerow: string='A', googlecol: number=1):string {
+    export function googler(googleid: string, googlerow: string, googlecol: number):string {
         return receivei2cmessage2("googler="+googleid+","+googlerow+","+convertToText(googlecol)).substr(1)    
     }	
 	
