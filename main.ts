@@ -288,8 +288,9 @@ namespace microbiti2cesp32 {
     false
     )
     i2cmessage2=""
+    let dd = pins.i2cReadBuffer(8,952,false)
     for (let index = 0; index <= 118; index++) {
-        let dd = pins.i2cReadBuffer(8,952,false)
+
         let messagecheck2 = dd.getNumber(NumberFormat.Int8LE, index)
         if (messagecheck2 == -1) {
             break;
