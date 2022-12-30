@@ -239,8 +239,15 @@ namespace microbiti2cesp32 {
     //% blockId=google block="Send to Google form"
     //% weight=30
     export function google():void {
-        sendi2cmessage("google=")    
+        sendi2cmessage("googler=")    
     }
+	
+     //% group="8.google"  
+    //% blockId=googler block="Send to Google form"
+    //% weight=30
+    export function googler(googleid: string, googlerow: string='A', googlecol: number=1):string {
+        return receivei2cmessage("googler="+googleid+","+googlerow+","+convertToText(googlecol))    
+    }	
 	
 	
 	
