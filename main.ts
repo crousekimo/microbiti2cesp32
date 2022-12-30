@@ -221,9 +221,23 @@ namespace microbiti2cesp32 {
         return parseFloat(datelist[time1])
     }
 
+     //% group="8.google1"  
+    //% blockId=google1 block="set %google_number as %google_ans" 
+    //% weight=70
+    export function google1(google_number: number, google_ans: string):void {
+        sendi2cmessage("google1="+convertToText(google_number)+","+google_ans)  
+    }
+	
+    //% group="8.google2"  
+    //% blockId=google2 block="set google form as %google_url" 
+    //% weight=70
+    export function google2(google_url: string):void {
+        sendi2cmessage("google2="+convertToText(google_url))  
+    }
+	
      //% group="8.google"  
     //% blockId=google block="Send to Google form"
-    //% weight=70
+    //% weight=30
     export function google():void {
         sendi2cmessage("google=")    
     }
