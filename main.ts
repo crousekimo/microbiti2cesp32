@@ -72,13 +72,17 @@ namespace microbiti2cesp32 {
     //% blockId=ReceiveMqttTopic block="receive mqtt topic"
     //% weight=98	
     export function ReceiveMqttTopic():string {
-        return receivei2cmessage("mqttrect=").substr(1)
+        let a=receivei2cmessage("mqttrect=").substr(1)
+	basic.pause(300)
+	return a
     }  
     //% group="2.MQTT"  
     //% blockId=ReceiveMqttMessage block="receive mqtt message"
     //% weight=97 	
     export function ReceiveMqttMessage():string {
-        return receivei2cmessage("mqttrecm=").substr(1)
+        let a=receivei2cmessage("mqttrecm=").substr(1)
+	basic.pause(300)
+        return a
     }  
     //% group="2.MQTT"  
     //% blockId=sendmqtt block="send mqtt topic %topic | message %message "
@@ -316,7 +320,6 @@ namespace microbiti2cesp32 {
             i2cmessage2 = i2cmessage2 + String.fromCharCode(messagecheck2)
 	}
     }
-    basic.pause(100)
     return i2cmessage2	    
     }
 
