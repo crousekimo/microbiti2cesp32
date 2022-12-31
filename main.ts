@@ -66,6 +66,7 @@ namespace microbiti2cesp32 {
     export function subMqtt(topic: string):void {
 	 check()
          sendi2cmessage("sebmqtt="+topic)
+	 basic.pause(200)
     }
     //% group="2.MQTT"  
     //% blockId=ReceiveMqttTopic block="receive mqtt topic"
@@ -84,6 +85,7 @@ namespace microbiti2cesp32 {
     //% weight=56 
     export function sendmqtt(topic: string, message: string):void {
         sendi2cmessage("sendmqtt="+topic+","+message)
+	basic.pause(200)
     }  
     //% group="3.Line notify"  
     //% blockId=linetoken block="Line notify token %token "
@@ -91,18 +93,21 @@ namespace microbiti2cesp32 {
     export function linetoken(token: string):void {
 	check()
         sendi2cmessage("linetoken="+token)
+	basic.pause(200)
     }  
     //% group="3.Line notify"  
     //% blockId=linemessage block="Line notify message %message "
     //% weight=57 
     export function linemessage(message: string):void {
         sendi2cmessage("linemessage="+message)
+	basic.pause(200)
     }  
     //% group="3.Line notify"  
     //% blockId=linesticker block="Line notify sticker message %message | packageID %packageID | stickerID %stickerID "
     //% weight=56 
     export function linesticker(message: string,packageID: number, stickerID: number):void {
         sendi2cmessage("linesticker="+message+","+packageID.toString()+","+stickerID.toString())
+	basic.pause(200)
     }  
   //% group="4.OpenWeatherMap"  	
     //% blockId=openweathermapsetup block="OpenWeatherMap key %key "
@@ -110,6 +115,7 @@ namespace microbiti2cesp32 {
     export function openweathermapsetup(key: string):void {
 	check()
         sendi2cmessage("openweathermapsetup="+key)
+	basic.pause(200)
     }  
     //% group="4.OpenWeatherMap"  
     //% blockId=openweathermapcity block="OpenWeatherMap city %city "
@@ -131,6 +137,7 @@ namespace microbiti2cesp32 {
     //% weight=101 
     export function thingspeak1(key:string, value1: string):void {
         sendi2cmessage("t="+key+","+value1)
+	basic.pause(200)    
     }
 	/*
     //% group="5.Thingspeak"            
@@ -154,6 +161,7 @@ namespace microbiti2cesp32 {
               }
         }
         sendi2cmessage("t="+key+","+b)
+	basic.pause(200)
     }
     */
     //% group="5.Thingspeak"      
@@ -175,6 +183,7 @@ namespace microbiti2cesp32 {
               }
         }
         sendi2cmessage("t="+key+","+b)
+	basic.pause(200)
     }
 
       
@@ -194,7 +203,8 @@ namespace microbiti2cesp32 {
     //% weight=50
     export function sendifttt(key: string, event: string, value1: string, value2: string, value3: string):void {
 	value1=value1+"&value2="+value2+"&value3="+value3;
-        sendi2cmessage("ifttt="+key+","+event+","+value1)    
+        sendi2cmessage("ifttt="+key+","+event+","+value1) 
+	basic.pause(200)
     }
 
 	
@@ -203,7 +213,8 @@ namespace microbiti2cesp32 {
     //% weight=70
     export function ntpsetup():void {
 	check()
-        sendi2cmessage("ntps=")    
+        sendi2cmessage("ntps=") 
+	basic.pause(200)
     }
 	
      //% group="7.NTP"  
@@ -227,21 +238,24 @@ namespace microbiti2cesp32 {
     //% blockId=google1 block="set google form question %google_number as %google_ans" 
     //% weight=70
     export function google1(google_number: number, google_ans: string):void {
-        sendi2cmessage("google1="+convertToText(google_number)+","+google_ans)  
+        sendi2cmessage("google1="+convertToText(google_number)+","+google_ans)
+	basic.pause(200)
     }
 	
     //% group="8.google"  
     //% blockId=google2 block="set google form url as %google_url" 
     //% weight=70
     export function google2(google_url: string):void {
-        sendi2cmessage("google2="+convertToText(google_url))  
+        sendi2cmessage("google2="+convertToText(google_url))
+	basic.pause(200)
     }
 	
      //% group="8.google"  
     //% blockId=google block="Send to Google form"
     //% weight=30
     export function google():void {
-        sendi2cmessage("googler=")    
+        sendi2cmessage("googler=") 
+	basic.pause(200)
     }
 	
      //% group="8.google"  
@@ -283,6 +297,7 @@ namespace microbiti2cesp32 {
         false
         )
     }
+    basic.pause(100)
     pins.i2cWriteNumber(
     8,
     10,
