@@ -304,7 +304,7 @@ namespace microbiti2cesp32 {
     NumberFormat.Int8LE,
     false
     )
-    basic.pause(200)
+    basic.pause(500)
     i2cmessage2=""
     let dd = pins.i2cReadBuffer(8,952,false)
     for (let index = 0; index <= 718; index++) {
@@ -316,6 +316,7 @@ namespace microbiti2cesp32 {
             i2cmessage2 = i2cmessage2 + String.fromCharCode(messagecheck2)
 	}
     }
+    basic.pause(100)
     return i2cmessage2	    
     }
 
