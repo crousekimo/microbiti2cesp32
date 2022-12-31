@@ -58,7 +58,12 @@ namespace microbiti2cesp32 {
     //% blockExternalInputs = 1
     export function iprequest():string {
 	check()
-        return receivei2cmessage("iprequest=").substr(1)
+        let a=receivei2cmessage("iprequest=").substr(1)
+   	if (!a.includes("iprequest"))
+        a=receivei2cmessage("iprequest=").substr(1)
+	basic.pause(100)
+        a=a.substr(9)
+	return a
     }
     //% group="2.MQTT"  
     //% blockId=subMqtt block="Subscribe mqtt %topic"
@@ -73,10 +78,10 @@ namespace microbiti2cesp32 {
     //% weight=98	
     export function ReceiveMqttTopic():string {
         let a=receivei2cmessage("mqttrect=").substr(1)
-	basic.pause(300)
+	basic.pause(100)
    	if (!a.includes("mqttrecm"))
         a=receivei2cmessage("mqttrect=").substr(1)
-	basic.pause(300)
+	basic.pause(100)
         a=a.substr(8)
 	return a
     }  
@@ -140,7 +145,13 @@ namespace microbiti2cesp32 {
     //% blockId=openweathermapreturn block="OpenWeatherMap option %option "
     //% weight=20 
     export function openweathermapreturn(option: openweathermapmenu):number {
-        return parseFloat(receivei2cmessage("openweathermapreturn="+option.toString()).substr(1))
+        let a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
+	basic.pause(100)
+   	if (!a.includes("mqttrecm"))
+        a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
+	basic.pause(100)
+        a=a.substr(20)
+	return a
     } 
 
 	
