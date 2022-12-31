@@ -297,16 +297,17 @@ namespace microbiti2cesp32 {
         false
         )
     }
-    basic.pause(100)
+
     pins.i2cWriteNumber(
     8,
     10,
     NumberFormat.Int8LE,
     false
     )
+    basic.pause(200)
     i2cmessage2=""
     let dd = pins.i2cReadBuffer(8,952,false)
-    for (let index = 0; index <= 118; index++) {
+    for (let index = 0; index <= 718; index++) {
 
         let messagecheck2 = dd.getNumber(NumberFormat.Int8LE, index)
         if (messagecheck2 == -1) {
