@@ -192,7 +192,8 @@ namespace microbiti2cesp32 {
     //% blockId=sendifttt block="send ifttt key %key | event %event | value1 %value1 | value2 %value2 | value3 %value3"
     //% weight=50
     export function sendifttt(key: string, event: string, value1: string, value2: string, value3: string):void {
-        sendi2cmessage("ifttt="+key+","+event+","+value1+","+value2+","+value3)    
+	value1=value1+"&value2="+value2+"&value3="+value3;
+        sendi2cmessage("ifttt="+key+","+event+","+value1)    
     }
 
 	
