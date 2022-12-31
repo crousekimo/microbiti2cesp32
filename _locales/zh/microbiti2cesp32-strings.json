@@ -1,6 +1,6 @@
 {
     "microbiti2cesp32|block": "i2c控制esp32",
-    "microbiti2cesp32.sendifttt|block": "傳送IFTTT key %key | 事件 %event | 值1 %value1 ",
+    "microbiti2cesp32.sendifttt|block": "傳送IFTTT key %key | 事件 %event | 值1 %value1 | 值2 %value2 | 值3 %value3",
     "microbiti2cesp32.sendmqtt|block": "發送MQTTT訊息 主題 %topic | 訊息 %message ",
     "microbiti2cesp32.setWiFi|block": "設定WIFI | SSID %SSID| Pass %PASS",
     "microbiti2cesp32.iprequest|block": "取得IP位址",
