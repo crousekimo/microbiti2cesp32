@@ -1,6 +1,6 @@
 {
     "name": "microbiti2cesp32",
-    "version": "0.1",
+    "version": "0.2",
     "description": "這是micro:bit用i2c控制esp32的積木",
     "license": "MIT",
     "dependencies": {
