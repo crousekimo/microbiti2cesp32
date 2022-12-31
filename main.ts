@@ -39,7 +39,8 @@ namespace microbiti2cesp32 {
      {
 	     if (aa==0)
 	     {
-		     basic.pause(5000)
+		     basic.pause(6000)
+		     receivei2cmessage("tt11=")
 		     aa=1
 	     }
      }
