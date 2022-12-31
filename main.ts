@@ -40,7 +40,7 @@ namespace microbiti2cesp32 {
 	     if (aa==0)
 	     {
 		     basic.pause(6000)
-		     receivei2cmessage("tt11=")
+		     receivei2cmessage("mqttrecm=").substr(1)
 		     aa=1
 	     }
      }
