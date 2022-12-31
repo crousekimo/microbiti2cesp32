@@ -74,6 +74,9 @@ namespace microbiti2cesp32 {
     export function ReceiveMqttTopic():string {
         let a=receivei2cmessage("mqttrect=").substr(1)
 	basic.pause(300)
+   	if (!a.includes("mqttrecm"))
+	        a=receivei2cmessage("mqttrect=").substr(1)
+	basic.pause(300)
 	return a
     }  
     //% group="2.MQTT"  
@@ -81,6 +84,9 @@ namespace microbiti2cesp32 {
     //% weight=97 	
     export function ReceiveMqttMessage():string {
         let a=receivei2cmessage("mqttrecm=").substr(1)
+	basic.pause(300)
+	if (!a.includes("mqttrecm"))
+        a=receivei2cmessage("mqttrecm=").substr(1)
 	basic.pause(300)
         return a
     }  
