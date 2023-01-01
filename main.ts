@@ -144,7 +144,7 @@ namespace microbiti2cesp32 {
   //% group="4.OpenWeatherMap"  
     //% blockId=openweathermapreturn block="OpenWeatherMap option %option "
     //% weight=20 
-    export function openweathermapreturn(option: openweathermapmenu):number {
+    export function openweathermapreturn(option: openweathermapmenu):string {
         let a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
 	basic.pause(100)
    	if (!a.includes("openweathermapreturn"))
@@ -213,7 +213,7 @@ namespace microbiti2cesp32 {
      //% group="5.Thingspeak"  
      //% blockId=thingspeak3 block="Connect to Thingspeak Channel ID %key | Read %value1 value"
     //% weight=101
-    export function thingspeak3(key:number, value1: value555): number {
+    export function thingspeak3(key:number, value1: value555): string {
         sendi2cmessage("tt="+convertToText(key)+","+convertToText(value1))
 	basic.pause(2000)
         let a=receivei2cmessage("ttt=").substr(1)
