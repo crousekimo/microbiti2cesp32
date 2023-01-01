@@ -144,14 +144,14 @@ namespace microbiti2cesp32 {
   //% group="4.OpenWeatherMap"  
     //% blockId=openweathermapreturn block="OpenWeatherMap option %option "
     //% weight=20 
-    export function openweathermapreturn(option: openweathermapmenu):string {
+    export function openweathermapreturn(option: openweathermapmenu):number {
         let a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
 	basic.pause(100)
    	if (!a.includes("openweathermapreturn"))
         a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
 	basic.pause(100)
         a=a.substr(20) 
-	return a
+	return parseFloat(a)
     } 
 
 	
@@ -262,8 +262,8 @@ namespace microbiti2cesp32 {
     //% group="7.NTP"  
     //% blockId=ntpgettime block="read %time1"
     //% weight=50
-    export function ntpgettime(time1: ntptime):string {
-        return datelist[time1]
+    export function ntpgettime(time1: ntptime):number {
+        return parseFloat(datelist[time1])
     }
 
      //% group="8.google"  
