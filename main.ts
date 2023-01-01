@@ -218,7 +218,7 @@ namespace microbiti2cesp32 {
 	basic.pause(1500)
         let a=receivei2cmessage("ttt=").substr(1)
 	if (!a.includes("openweathermapreturn"))
-        	a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
+        	a=receivei2cmessage("ttt=").substr(1)
 	basic.pause(100)
         a=a.substr(20)
         return parseFloat(a)
@@ -252,8 +252,8 @@ namespace microbiti2cesp32 {
 	basic.pause(2000)
 	nptgettime=receivei2cmessage("ntpget2=").substr(1)
 	if (!a.includes("ntpget2"))
-	        a=receivei2cmessage("ntpget2="+option.toString()).substr(1)
-        a=a.substr(6)
+	        nptgettime=receivei2cmessage("ntpget2=").substr(1)
+        nptgettime=nptgettime.substr(6)
 	datelist=nptgettime.split(",")
     }
 	
