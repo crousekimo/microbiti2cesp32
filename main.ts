@@ -60,7 +60,7 @@ namespace microbiti2cesp32 {
 	check()
         let a=receivei2cmessage("iprequest=").substr(1)
    	if (!a.includes("iprequest"))
-        a=receivei2cmessage("iprequest=").substr(1)
+           a=receivei2cmessage("iprequest=").substr(1)
 	basic.pause(100)
         a=a.substr(9)
 	return a
@@ -147,7 +147,7 @@ namespace microbiti2cesp32 {
     export function openweathermapreturn(option: openweathermapmenu):number {
         let a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
 	basic.pause(100)
-   	if (!a.includes("mqttrecm"))
+   	if (!a.includes("openweathermapreturn"))
         a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
 	basic.pause(100)
         a=a.substr(20)
@@ -215,8 +215,12 @@ namespace microbiti2cesp32 {
     //% weight=101
     export function thingspeak3(key:number, value1: value555): number {
         sendi2cmessage("tt="+convertToText(key)+","+convertToText(value1))
-	basic.pause(2000)
+	basic.pause(1500)
         let a=receivei2cmessage("ttt=").substr(1)
+	if (!a.includes("openweathermapreturn"))
+        	a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
+	basic.pause(100)
+        a=a.substr(20)
         return parseFloat(a)
     }     
 
@@ -247,6 +251,9 @@ namespace microbiti2cesp32 {
         sendi2cmessage("ntpget1=")
 	basic.pause(2000)
 	nptgettime=receivei2cmessage("ntpget2=").substr(1)
+	if (!a.includes("ntpget2"))
+	        a=receivei2cmessage("ntpget2="+option.toString()).substr(1)
+        a=a.substr(6)
 	datelist=nptgettime.split(",")
     }
 	
@@ -286,7 +293,10 @@ namespace microbiti2cesp32 {
     //% weight=30
     export function googler(googleid: string, googlerow: string, googlecol: number):string {
         let a=receivei2cmessage2("googler="+googleid+","+googlerow+","+convertToText(googlecol)).substr(1)
-	basic.pause(2000)
+   	if (!a.includes("googler"))
+           a=receivei2cmessage("googler=").substr(1)
+	basic.pause(100)
+        a=a.substr(7)	    
 	return a
     }	
 	
