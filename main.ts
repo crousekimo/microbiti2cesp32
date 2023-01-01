@@ -150,8 +150,8 @@ namespace microbiti2cesp32 {
    	if (!a.includes("openweathermapreturn"))
         a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
 	basic.pause(100)
-        a=a.substr(20)
-	return parseFloat(a)
+       /* a=a.substr(20) */
+	return a
     } 
 
 	
@@ -215,13 +215,16 @@ namespace microbiti2cesp32 {
     //% weight=101
     export function thingspeak3(key:number, value1: value555): number {
         sendi2cmessage("tt="+convertToText(key)+","+convertToText(value1))
-	basic.pause(1500)
+	basic.pause(2000)
         let a=receivei2cmessage("ttt=").substr(1)
 	if (!a.includes("openweathermapreturn"))
+	{
         	a=receivei2cmessage("ttt=").substr(1)
+		basic.pause(2000)
+	}
 	basic.pause(100)
-        a=a.substr(20)
-        return parseFloat(a)
+       /* a=a.substr(20) */
+        return a
     }     
 
 	
