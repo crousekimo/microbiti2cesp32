@@ -151,7 +151,7 @@ namespace microbiti2cesp32 {
         a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
 	basic.pause(100)
         a=a.substr(20)
-	return a
+	return parseFloat(a)
     } 
 
 	
