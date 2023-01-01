@@ -217,11 +217,11 @@ namespace microbiti2cesp32 {
         sendi2cmessage("tt="+convertToText(key)+","+convertToText(value1))
 	basic.pause(2000)
         let a=receivei2cmessage("ttt=").substr(1)
-	if (!a.includes("ttt"))
+	while (!a.includes("ttt"))
 	{
            a=receivei2cmessage("ttt=").substr(1)
+	   basic.pause(200)
 	}
-	basic.pause(200)
         a=a.substr(3)
         return a
     }     
