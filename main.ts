@@ -222,7 +222,7 @@ namespace microbiti2cesp32 {
            a=receivei2cmessage("ttt=").substr(1)
 	   basic.pause(200)
 	}
-        /* a=a.substr(3) */
+        a=a.substr(3)
         return a
     }     
 
