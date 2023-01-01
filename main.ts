@@ -295,9 +295,12 @@ namespace microbiti2cesp32 {
     //% weight=30
     export function googler(googleid: string, googlerow: string, googlecol: number):string {
         let a=receivei2cmessage2("googler="+googleid+","+googlerow+","+convertToText(googlecol)).substr(1)
+	basic.pause(2000)
    	if (!a.includes("googler"))
+	{
            a=receivei2cmessage("googler=").substr(1)
-	basic.pause(100)
+	   basic.pause(2000)
+	}
         a=a.substr(7)	    
 	return a
     }	
