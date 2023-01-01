@@ -221,8 +221,8 @@ namespace microbiti2cesp32 {
 	{
            a=receivei2cmessage("ttt=").substr(1)
 	}
-	basic.pause(100)
-       /* a=a.substr(20) */
+	basic.pause(2000)
+        a=a.substr(2)
         return a
     }     
 
@@ -261,7 +261,7 @@ namespace microbiti2cesp32 {
 	
     //% group="7.NTP"  
     //% blockId=ntpgettime block="read %time1"
-    //% weight=50
+    //% weight=30
     export function ntpgettime(time1: ntptime):number {
         return parseFloat(datelist[time1])
     }
