@@ -255,15 +255,15 @@ namespace microbiti2cesp32 {
 	nptgettime=receivei2cmessage("ntpget2=").substr(1)
 	if (!nptgettime.includes("ntpget2"))
 	        nptgettime=receivei2cmessage("ntpget2=").substr(1)
-        nptgettime=nptgettime.substr(6)
+/*        nptgettime=nptgettime.substr(6)  */
 	datelist=nptgettime.split(",")
     }
 	
     //% group="7.NTP"  
     //% blockId=ntpgettime block="read %time1"
     //% weight=50
-    export function ntpgettime(time1: ntptime):number {
-        return parseFloat(datelist[time1])
+    export function ntpgettime(time1: ntptime):string {
+        return datelist[time1]
     }
 
      //% group="8.google"  
