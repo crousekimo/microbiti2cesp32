@@ -255,7 +255,7 @@ namespace microbiti2cesp32 {
 	nptgettime=receivei2cmessage("ntpget2=").substr(1)
 	if (!nptgettime.includes("ntpget2"))
 	        nptgettime=receivei2cmessage("ntpget2=").substr(1)
-/*        nptgettime=nptgettime.substr(6)  */
+        nptgettime=nptgettime.substr(7)
 	datelist=nptgettime.split(",")
     }
 	
