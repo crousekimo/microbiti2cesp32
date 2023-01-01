@@ -150,7 +150,7 @@ namespace microbiti2cesp32 {
    	if (!a.includes("openweathermapreturn"))
         a=receivei2cmessage("openweathermapreturn="+option.toString()).substr(1)
 	basic.pause(100)
-       /* a=a.substr(20) */
+        a=a.substr(20) 
 	return a
     } 
 
@@ -217,10 +217,9 @@ namespace microbiti2cesp32 {
         sendi2cmessage("tt="+convertToText(key)+","+convertToText(value1))
 	basic.pause(2000)
         let a=receivei2cmessage("ttt=").substr(1)
-	if (!a.includes("openweathermapreturn"))
+	if (!a.includes("ttt"))
 	{
-        	a=receivei2cmessage("ttt=").substr(1)
-		basic.pause(2000)
+           a=receivei2cmessage("ttt=").substr(1)
 	}
 	basic.pause(100)
        /* a=a.substr(20) */
