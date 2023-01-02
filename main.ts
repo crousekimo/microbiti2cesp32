@@ -286,7 +286,7 @@ namespace microbiti2cesp32 {
     //% blockId=google block="Send to Google form"
     //% weight=30
     export function google():void {
-        sendi2cmessage("googler=") 
+        sendi2cmessage("google=") 
 	basic.pause(200)
     }
 	
