@@ -290,21 +290,6 @@ namespace microbiti2cesp32 {
 	basic.pause(200)
     }
 	
-     //% group="8.google"  
-    //% blockId=googler block="get google sheet id %googleid row %googlerow col %googlecol"
-    //% weight=30
-    export function googler(googleid: string, googlerow: string, googlecol: number):string {
-        let a=receivei2cmessage2("googler="+googleid+","+googlerow+","+convertToText(googlecol)).substr(1)
-	basic.pause(1000)
-   	if (!a.includes("googler"))
-	{
-           a=receivei2cmessage("googler=").substr(1)
-	   basic.pause(1000)
-	}
-        a=a.substr(7)	    
-	return a
-    }	
-	
 	
 	
     function sendi2cmessage(command: string):void {
